@@ -1,0 +1,9 @@
+<div (click)="onAddNote()" class="add-button">
+    <div class="button-container">
+        <label class="button-title">Add new note ...</label>
+    </div>
+</div>
+
+<section *ngFor="let note of _notes" class="notes-list">
+    <note-component [note]="note"></note-component>
+</section>
