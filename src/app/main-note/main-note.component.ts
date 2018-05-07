@@ -19,7 +19,7 @@ export class MainNoteComponent implements OnInit {
   }
 
   private _createDummyNotes () {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
       this._notesService.addNote({
         author: 'Dror',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac est ut mi pretium porta. Praesent lacus justo, blandit at rutrum quis, tempor id dui. Donec vel mauris urna. Nulla facilisi. Cras tincidunt finibus cursus. Aliquam dapibus, neque non suscipit vehicula, augue libero vulputate arcu, quis ornare lectus lorem eget tortor. Vestibulum libero eros, interdum at dapibus non, congue eget diam. Phasellus in dignissim dui, sed viverra lectus.',

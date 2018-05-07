@@ -1,9 +1,9 @@
 .main {
-    //border: 1px solid rgba(0, 0, 0, 0.75);
-    display: block;
-    height: calc(100% - 15px);
-    margin: 0 auto;
-    width: 90%;
+    display: flex;
+    position: absolute;
+    top: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .header {
