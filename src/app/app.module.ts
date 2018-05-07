@@ -5,11 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { MainContainerComponent } from './main-container/main-container.component';
-
-import { MainNoteModule } from './main-note/main-note.module';
-import { NoteModule } from './note-component/note.module';
+import { MainNoteModule } from './components/main-note/main-note.module';
+import { NoteModule } from './components/note-component/note.module';
 
 @NgModule({
   declarations: [

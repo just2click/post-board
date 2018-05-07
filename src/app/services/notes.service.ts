@@ -23,7 +23,6 @@ export class NotesService {
   }
 
   public addNote(note: INote) {
-    note['isNote'] = true;
     this.notes.unshift(note);
     this.notesUpdated.next(this.notes);
   }
