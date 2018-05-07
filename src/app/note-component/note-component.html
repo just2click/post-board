@@ -1,0 +1,12 @@
+<div [hidden]="isNote" (click)="onOpen(note)" class="single-note">
+    <div class="note-container">
+        <label class="note-author">{{ note.author }}</label>
+        <p class="note-description">{{ note.description }}</p>
+    </div>
+</div>
+
+<div [hidden]="!isNote" (click)="onAddNote()" class="single-note">
+    <div class="note-container">
+
+    </div>
+</div>

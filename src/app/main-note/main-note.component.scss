@@ -1,0 +1,17 @@
+.main {
+    //border: 1px solid rgba(0, 0, 0, 0.75);
+    display: block;
+    height: calc(100% - 15px);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+    height: 70px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
