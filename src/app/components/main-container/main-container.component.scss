@@ -9,13 +9,123 @@
     height: 200px;
     width: 300px;
     .button-container {
+        height: 200px;
         padding: 10px;
         position: relative;
+        text-align: center;
         .button-title {
             background: #fff;
             padding: 0 5px;
             position: absolute;
             top: -10px;
+            left: 10px;
+        }
+        .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        img {
+            height: 80px;
+            margin: 0 auto;
+            vertical-align: middle;
+            width: 80px;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
+}
+
+
+/* MODAL STYLES
+-------------------------------*/
+
+modal {
+    /* modals are hidden by default */
+    display: none;
+    .modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* z-index must be higher than .modal-background */
+        z-index: 1000;
+        /* enables scrolling for tall modals */
+        overflow: auto;
+        .modal-body {
+            padding: 20px;
+            background: #fff;
+            /* margin exposes part of the modal background */
+            margin: 40px;
+            .small-modal-layout {
+                display: flex;
+                flex-direction: column;
+                flex-flow: column;
+                align-items: flex-start;
+                h1 {
+                    margin-top: 0
+                }
+                .author-container,
+                .description-container,
+                .buttons-container {
+                    display: flex;
+                    flex-direction: column;
+                    width: 99%;
+                    input,
+                    textarea {
+                        margin: 7.5px 0;
+                        font-family: roboto;
+                    }
+                }
+                .author-container {
+                    input {
+                        height: 24px;
+                        line-height: 24px;
+                    }
+                }
+                .description-container {
+                    textarea {
+                        min-height: 24px;
+                        height: 72px;
+                    }
+                }
+                .buttons-container {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    width: 99%;
+                    input {
+                        font-family: roboto;
+                        font-size: 22px;
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .small-modal {
+        min-width: 768px;
+        max-width: 768px;
+        margin: 50px auto;
+    }
+    .modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+        /* z-index must be below .modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
 }

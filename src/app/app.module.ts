@@ -1,3 +1,4 @@
+
 import { NotesService } from './services/notes.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainNoteModule } from './components/main-note/main-note.module';
 import { NoteModule } from './components/note-component/note.module';
+import { ModalService } from './services';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { NoteModule } from './components/note-component/note.module';
     MainNoteModule,
     NoteModule
   ],
-  providers: [NotesService],
+  providers: [NotesService, ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

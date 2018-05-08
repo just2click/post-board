@@ -1,9 +1,65 @@
-<div (click)="onAddNote()" class="add-button">
+<div class="add-button">
     <div class="button-container">
         <label class="button-title">Add new note ...</label>
+        <span class="helper"></span>
+        <img (click)="onAddNote('addNote')" src="../../../assets/images/notes-add-button_318-31759.jpg" alt="">
     </div>
 </div>
 
 <section *ngFor="let note of _notes" class="notes-list">
-    <note-component [note]="note"></note-component>
+    <note-component [note]="note" (click)="showNote(note)"></note-component>
 </section>
+
+<modal id="addNote">
+    <div class="modal small-modal">
+        <div class="modal-body">
+            <form [formGroup]="rForm" (ngSubmit)="addNote(rForm.value)">
+                <div class="form-container">
+                    <div class="row columns small-modal-layout">
+
+                        <h1>Post a new note</h1>
+                        <div class="author-container">
+                            <label>Author Name</label>
+                            <input type="text" formControlName="author">
+                            <div class="alert" *ngIf="!rForm.controls['author'].valid && rForm.controls['author'].touched">{{ titleAlert }}</div>
+                        </div>
+
+                        <div class="description-container">
+                            <label>What would you like to say?</label>
+                            <textarea formControlName="description"></textarea>
+                            <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">You must specify a description that's between 10 and 500 characters.</div>
+                        </div>
+
+                        <div class="buttons-container">
+                            <input type="submit" class="button expanded" value="Post">
+                            <input type="button" (click)="closeModal('addNote');" value="Close">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<modal id="showNote">
+    <div class="modal small-modal" *ngIf="selectedNote.author">
+        <div class="modal-body">
+            <div class="form-container">
+                <div class="row columns small-modal-layout">
+
+                    <h1>A note from {{ selectedNote.author }}</h1>
+
+                    <div class="description-container">
+                        <p>{{ selectedNote.description }}</p>
+                    </div>
+
+                    <div class="buttons-container">
+                        <input type="button" (click)="closeModal('showNote');" value="Close">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

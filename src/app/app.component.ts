@@ -8,3 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
 }
+
+
+// Used this dialog code
+// https://github.com/cornflourblue/angular2-custom-modal

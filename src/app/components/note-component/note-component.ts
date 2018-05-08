@@ -14,7 +14,7 @@ export class NoteComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onOpen (note) {
-    // Open a modal with note content
+  public preventDefault (e) {
+    e.preventDefault();
   }
 }
