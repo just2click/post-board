@@ -1,6 +1,10 @@
 <div class="single-note">
     <div class="note-container">
         <label class="note-author">{{ note.author }}</label>
-        <p class="note-description"><a href="#" (click)="preventDefault($event)">{{ note.description }}</a></p>
+        <p class="note-description ">
+            <a href="#" (click)="preventDefault($event)">
+                <div class="block-ellipsis">{{ note.description }}</div>
+            </a>
+        </p>
     </div>
 </div>
